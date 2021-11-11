@@ -1,0 +1,122 @@
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <form [formGroup]="productGroup" (ngSubmit)="onSubmit()">
+        <!-- customer form group -->
+        <div formGroupName="product" class="form-area">
+          <h3>Product</h3>
+          <!-- PRODUCT NAME -->
+          <div class="row">
+            <div class="col-md-2">
+              <label>Product Name</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input
+                  formControlName="productName"
+                  type="text"
+                  list="codes"
+                  [(ngModel)]="selectedLevel"
+                  (change)="selected()"
+                />
+                <datalist id="codes">
+                  <option
+                    *ngFor="let tempProductName of namePrices"
+                    [ngValue]="tempProductName.productName"
+                  >
+                    {{ tempProductName.productName }}
+                  </option>
+                </datalist>
+
+                <div
+                  *ngIf="
+                    productProductName!.invalid &&
+                    (productProductName!.dirty || productProductName!.touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="productProductName!.errors!.required">
+                    Product Name is required
+                  </div>
+
+                  <div *ngIf="productProductName!.errors!.pattern">
+                    Product Name should be word without numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- PRODUCT QUANTITY -->
+          <div class="row">
+            <div class="col-md-2">
+              <label>Product Quantity</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input
+                  formControlName="productQuantity"
+                  type="text"
+                  (input)="copyValueEntered($event)"
+                />
+
+                <div
+                  *ngIf="
+                    productProductQuantity!.invalid &&
+                    (productProductQuantity!.dirty ||
+                      productProductQuantity!.touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="productProductQuantity!.errors!.required">
+                    Product Quantity is required
+                  </div>
+
+                  <div *ngIf="productProductQuantity!.errors!.pattern">
+                    Product Quantity must be number
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- PRODUCT PRICE -->
+          <div class="row">
+            <div class="col-md-2">
+              <label>Product Price</label>
+            </div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input formControlName="productPrice" type="text" />
+                <div
+                  *ngIf="
+                    productProductPrice!.invalid &&
+                    (productProductPrice!.dirty || productProductPrice!.touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="productProductPrice!.errors!.required">
+                    Product Price is required
+                  </div>
+
+                  <div *ngIf="productProductPrice!.errors!.pattern">
+                    Product Price must be number, and have 2 significant digits
+                    if decimal
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Order Details-->
+        <!-- submit button-->
+        <div class="text-center">
+          <!-- <a routerLink="/validation" routerLinkActive="active-link"> -->
+            <button type="submit" class="btn btn-info">
+              Submit
+            </button>
+          <!-- </a> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

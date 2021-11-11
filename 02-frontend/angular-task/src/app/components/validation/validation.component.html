@@ -1,0 +1,40 @@
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <h3>Review Your Order</h3>
+
+      <p>Product Name: {{ productName }}</p>
+
+      <p>Total Quantity: {{ productQuantity }}</p>
+
+      <p>
+        Total Price:
+        {{ productPrice }}
+      </p>
+    </div>
+
+    <div class="buttons">
+      <div class="action_btn">
+        <button
+          name="submit"
+          class="btn btn-primary"
+          type="submit"
+          value="Save"
+          (click)="updateClick()"
+        >
+          Update
+        </button>
+        <button
+          name="submit"
+          class="btn btn-primary"
+          type="submit"
+          value="Cancel"
+          (click)="newClick()"
+        >
+          New
+        </button>
+        <p id="saved"></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+## MySQL config start
 1. Open MySQL as your default user
 2. In your default user, on top row click File -> Open SQL Script -> your_file_system\job-interview-project\00-starter-files\01-create-user.sql
 3. Once 01-create-user is open, click lightning button to execute the code.
@@ -7,12 +8,16 @@
 6. Click lightning button to execute script.
 7. Repeat procedures 5-6 to execute script 03-checkout-order.sql
 
-##MySQL config is ready
+## MySQL config is ready
+
+## Backend config start
 
 8. Open 01-backend folder in your JAVA IDE. Open pom.xml file to check if it's open as MAVEN file. If not, open pom.xml->right click->Maven-> reload file/open file.
 9. Run testTaskApplication in 01-backend directory
 
 ## Backend config is ready
+
+## Frontend config start
 10. Go to cmd and type : 1) node -v
 						 2) npm -v
 11. install https://nodejs.org/en/blog/release/v14.18.1/ for compatibility purposes
@@ -26,7 +31,7 @@ This will install angular into your computer
 14. Run backend testTaskApplication first, then run angular app as follows:
 your_file_system\job-interview-project\02-frontend\angular-task>ng serve
 
-##Frontend config is ready
+## Frontend config is ready
 
 15. In your browser enter : localhost:4200
 
